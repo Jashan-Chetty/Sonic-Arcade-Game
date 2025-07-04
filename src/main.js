@@ -1,4 +1,5 @@
 import {k} from "./kaplayCtx"
+import mainMenu from "./scene/mainMenu";
 
 k.loadSprite("chemical-bg", "graphics/chemical-bg.png");
 k.loadSprite("platforms", "graphics/platforms.png");
@@ -39,10 +40,21 @@ k.loadFont("mania", "fonts/mania.ttf");
 
 //load sound
 k.loadSound("city", "sound/city.mp3");
-k.loadSound("destory", "sound/Destory.wav");
+k.loadSound("destory", "sound/Destroy.wav");
 k.loadSound("hurt", "sound/Hurt.wav");
 k.loadSound("hyper-ring", "sound/HyperRing.wav");
 k.loadSound("jump", "sound/Jump.wav");
 k.loadSound("ring", "sound/Ring.wav");
 
-k.scene("main")
+// dont pass parathesis, scene must be involved with invoking method
+k.scene("main-menu", mainMenu);
+
+k.scene("game", () => {
+
+});
+
+k.scene("game-over", () => {
+
+});
+
+k.go("main-menu");
