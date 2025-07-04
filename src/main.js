@@ -1,5 +1,7 @@
 import {k} from "./kaplayCtx"
+import game from "./scene/game";
 import mainMenu from "./scene/mainMenu";
+import gameOver from "./scene/gameover";
 
 k.loadSprite("chemical-bg", "graphics/chemical-bg.png");
 k.loadSprite("platforms", "graphics/platforms.png");
@@ -49,12 +51,9 @@ k.loadSound("ring", "sound/Ring.wav");
 // dont pass parathesis, scene must be involved with invoking method
 k.scene("main-menu", mainMenu);
 
-k.scene("game", () => {
+k.scene("game", game);
 
-});
+k.scene("game-over", gameOver);
 
-k.scene("game-over", () => {
-
-});
-
+// start scene
 k.go("main-menu");
