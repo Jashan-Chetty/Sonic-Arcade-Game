@@ -5,6 +5,8 @@ import {k} from "../kaplayCtx"
 
 export default function game() {
     k.setGravity(3100);
+
+    const citySfx = k.play("city", {volume: 0.2, loop: true});
     
     const bgPieceWidth = 1920;
     const bgPieces = [
@@ -46,11 +48,19 @@ export default function game() {
 
             score += 10 * scoreMultiplier;
             scoreText.text = `SCORE: ${score}`;
+
+            if(scoreMultiplier === 1) sonic.ringCollectUI.text = `+10`;
+            if(scoreMultiplier > 1) sonic.ringCollectUI.text = `x${scoreMultiplier}`;
+
+            k.wait(1, () => {
+                sonic.ringCollectUI.text = "";
+            });
             return;
         }
 
         k.play("hurt", {volume: 0.5});
-        k.go("game-over");
+        k.setData("current-score", score);
+        k.go("game-over", { citySfx });
     });
 
     sonic.onCollide("ring", (ring) => {
@@ -59,7 +69,10 @@ export default function game() {
 
         score++;
         scoreText.text = `SCORE: ${score}`;
-
+        sonic.ringCollectUI.text = "+1";
+        k.wait(1, () => {
+            sonic.ringCollectUI.text = "";
+        });
     });
 
     // inital game speed, how fast it moves

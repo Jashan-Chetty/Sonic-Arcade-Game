@@ -10,6 +10,7 @@ export function makeSonic(pos) {
         k.pos(pos),
         k.body({jumpForce: 1700}),
         {
+            ringCollectUI: null,
             setControl() {
                 k.onButtonPress("jump", () => {
                     // this is the sonic character
@@ -31,6 +32,15 @@ export function makeSonic(pos) {
                 });
             }
         },
+    ]);
+
+    // creating child game object
+    sonic.ringCollectUI = sonic.add([
+        k.text("", {font: "mania", size: 24}),
+        k.color(255, 255, 0),
+        k.anchor("center"),
+        // reletive to sonic
+        k.pos(30, -10)
     ]);
 
     return sonic;
