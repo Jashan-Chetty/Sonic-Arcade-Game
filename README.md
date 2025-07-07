@@ -11,7 +11,7 @@ Sonic Ring Run is a fast-paced 2D platformer inspired by classic Sonic games, bu
   - 🎨 Custom pixel art sprites and Mania-style fonts
     
 🧱 Built With
-  - Kaboom.js – A JavaScript game programming library
+  - Kaplay.js – A JavaScript game programming library
   - HTML5 Canvas – For rendering visuals
   - JavaScript (ES6) – Game logic and mechanics
   - Custom assets – Sprites, sounds, and animations
