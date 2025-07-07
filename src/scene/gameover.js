@@ -76,4 +76,17 @@ export default function gameOver(citySfx) {
         k.text(currentRank, {font: "mania", size: 100}),
         k.anchor("center")
     ]);
+
+    k.wait(1, () => {
+        k.add([
+            k.text("Press Space/Click/Touch to Play Agian", {
+                font: "mania", size: 64
+            }),
+            k.anchor("center"),
+            k.pos(k.center().x, k.center().y + 350)
+        ]);
+        k.onButtonPress("jump", () => {
+            k.go("game");
+        });
+    });
 }
