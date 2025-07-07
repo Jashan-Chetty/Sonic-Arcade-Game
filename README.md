@@ -1,5 +1,6 @@
 🌀 Sonic Ring Run
 Sonic Ring Run is a fast-paced 2D platformer inspired by classic Sonic games, built using Kaboom.js. Dash through a side-scrolling chemical zone, collect rings, and defeat enemies. The game features smooth animations, infinite scrolling backgrounds, and dynamic enemy spawning to keep the action fresh and challenging.
+
   🎮 Features
   - 🦔 Play as Sonic with jump physics, animations, and sound effects
   - 🔁 Seamless infinite scrolling background and platforms
